@@ -1,0 +1,31 @@
+# Ignore any generated TypeScript -> JavaScript files
+.github/actions/**/*.js
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Typescript v1 declaration files
+typings/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# NLU.DevOps configuration settings
+luis-app/appsettings.local.json
+
+# LUIS app transient files
+luis-app/model.json
+luis-app/results.json
+luis-app/metadata.json
+luis-app/statistics.json
+luis-app/tests/results.json
+luis-app/tests/metadata.json
+luis-app/tests/statistics.json

@@ -1,0 +1,1047 @@
+{
+  "luis_schema_version": "6.0.0",
+  "intents": [
+    {
+      "name": "None",
+      "features": []
+    },
+    {
+      "name": "RequestVacation",
+      "features": []
+    }
+  ],
+  "entities": [
+    {
+      "name": "vacation-request",
+      "children": [
+        {
+          "name": "start-date",
+          "instanceOf": "datetimeV2",
+          "children": [],
+          "features": []
+        },
+        {
+          "name": "end-date",
+          "instanceOf": "datetimeV2",
+          "children": [],
+          "features": []
+        },
+        {
+          "name": "leave-type",
+          "instanceOf": "LeaveType",
+          "children": [],
+          "features": []
+        },
+        {
+          "name": "date-range",
+          "instanceOf": "datetimeV2",
+          "children": [],
+          "features": []
+        },
+        {
+          "name": "days-duration",
+          "children": [
+            {
+              "name": "days-number",
+              "instanceOf": "number",
+              "children": [],
+              "features": []
+            }
+          ],
+          "features": []
+        }
+      ],
+      "roles": [],
+      "features": []
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "LeaveType",
+      "subLists": [
+        {
+          "canonicalForm": "sick",
+          "list": [
+            "sick leave"
+          ]
+        },
+        {
+          "canonicalForm": "maternity",
+          "list": [
+            "maternity leave",
+            "in maternity"
+          ]
+        },
+        {
+          "canonicalForm": "paternity",
+          "list": [
+            "paternity leave"
+          ]
+        },
+        {
+          "canonicalForm": "paid",
+          "list": [
+            "regular vacation",
+            "paid time off"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "a long time ago i went to vienna",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "because of my europe travel i'm going to need a paid time off vacations from january 1 to january 15",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 48,
+          "endPos": 60
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 48,
+          "endPos": 99
+        },
+        {
+          "entity": "date-range",
+          "startPos": 72,
+          "endPos": 99
+        }
+      ]
+    },
+    {
+      "text": "book time off please starting may 1st coming back on may 24",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 5,
+          "endPos": 58
+        },
+        {
+          "entity": "start-date",
+          "startPos": 21,
+          "endPos": 36
+        },
+        {
+          "entity": "end-date",
+          "startPos": 53,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "can i book vacay from july 4th until july 20th?",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 11,
+          "endPos": 45
+        },
+        {
+          "entity": "date-range",
+          "startPos": 17,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "don't you think that san francisco is a beautiful city",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "great that we can do devops with luis",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi, i want a vacation that starts on june 7th and end on june 15th.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 13,
+          "endPos": 65
+        },
+        {
+          "entity": "start-date",
+          "startPos": 37,
+          "endPos": 44
+        },
+        {
+          "entity": "end-date",
+          "startPos": 57,
+          "endPos": 65
+        }
+      ]
+    },
+    {
+      "text": "i had been feeling really sick, for that reason i need to request a sick vacation from march 10th to march 15th",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 68,
+          "endPos": 71
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 68,
+          "endPos": 110
+        },
+        {
+          "entity": "date-range",
+          "startPos": 82,
+          "endPos": 110
+        }
+      ]
+    },
+    {
+      "text": "i have suffering from fever for 7 days, so i need sick leave for 5 days starting from 25th february.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 50,
+          "endPos": 59
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 50,
+          "endPos": 98
+        },
+        {
+          "entity": "days-number",
+          "startPos": 65,
+          "endPos": 65
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 65,
+          "endPos": 70
+        },
+        {
+          "entity": "start-date",
+          "startPos": 72,
+          "endPos": 98
+        }
+      ]
+    },
+    {
+      "text": "i need a paid time off vacation from the date 05/05/1993 to 05/05/2022 so i can travel and work in othe country",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 9,
+          "endPos": 21
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 69
+        },
+        {
+          "entity": "date-range",
+          "startPos": 46,
+          "endPos": 69
+        }
+      ]
+    },
+    {
+      "text": "i need a sick vacation of 10 days from jan 2nd because of the knee surgery",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 9,
+          "endPos": 12
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 45
+        },
+        {
+          "entity": "days-number",
+          "startPos": 26,
+          "endPos": 27
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 26,
+          "endPos": 32
+        },
+        {
+          "entity": "start-date",
+          "startPos": 39,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "i need a urgent vacation of 04/25/2020 for 15 days , am sick with flu",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 16,
+          "endPos": 59
+        },
+        {
+          "entity": "start-date",
+          "startPos": 28,
+          "endPos": 37
+        },
+        {
+          "entity": "days-number",
+          "startPos": 43,
+          "endPos": 44
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 43,
+          "endPos": 49
+        },
+        {
+          "entity": "leave-type",
+          "startPos": 56,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "i need a vacation from january to march because i've been working endlessly without proper compensation. or i quit",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 38
+        },
+        {
+          "entity": "date-range",
+          "startPos": 18,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "i need a vacation from may 31th to june 13th because i must visit my parents",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 43
+        },
+        {
+          "entity": "date-range",
+          "startPos": 18,
+          "endPos": 43
+        }
+      ]
+    },
+    {
+      "text": "i need my vacation this year 02/02/2020 , my last year was 02/02/2019 and my next vacation is 02/02/2021",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 10,
+          "endPos": 38
+        },
+        {
+          "entity": "start-date",
+          "startPos": 29,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "i need to book vacation starting april 10th for 6 working days",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 15,
+          "endPos": 61
+        },
+        {
+          "entity": "start-date",
+          "startPos": 24,
+          "endPos": 42
+        },
+        {
+          "entity": "days-number",
+          "startPos": 48,
+          "endPos": 48
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 48,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "i need to go on vacation on may 1th and return on the 30th of the same month",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 16,
+          "endPos": 75
+        },
+        {
+          "entity": "start-date",
+          "startPos": 28,
+          "endPos": 34
+        },
+        {
+          "entity": "end-date",
+          "startPos": 50,
+          "endPos": 75
+        }
+      ]
+    },
+    {
+      "text": "i need to request paid time off for a family holiday starting from 04/30/2020 and it will last 10 days",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 18,
+          "endPos": 30
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 18,
+          "endPos": 101
+        },
+        {
+          "entity": "start-date",
+          "startPos": 53,
+          "endPos": 76
+        },
+        {
+          "entity": "days-number",
+          "startPos": 95,
+          "endPos": 96
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 95,
+          "endPos": 101
+        }
+      ]
+    },
+    {
+      "text": "i need to schedule a long vacation, specificly a month, this is from september 1st to october 1st, to hawai, and check in at hilton hotel.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 10,
+          "endPos": 96
+        },
+        {
+          "entity": "date-range",
+          "startPos": 64,
+          "endPos": 96
+        }
+      ]
+    },
+    {
+      "text": "i need to take my sick vacations (20 days) to start on june 01st due personal reasons",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 18,
+          "endPos": 21
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 18,
+          "endPos": 63
+        },
+        {
+          "entity": "days-number",
+          "startPos": 34,
+          "endPos": 35
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 34,
+          "endPos": 40
+        },
+        {
+          "entity": "start-date",
+          "startPos": 55,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "i need to take my sick vacations to start on june 04th and end on july 05th due personal reasons",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 18,
+          "endPos": 21
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 18,
+          "endPos": 74
+        },
+        {
+          "entity": "start-date",
+          "startPos": 45,
+          "endPos": 53
+        },
+        {
+          "entity": "end-date",
+          "startPos": 66,
+          "endPos": 74
+        }
+      ]
+    },
+    {
+      "text": "i need to take my vacations to start on june 01st and end on august 02nd",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 18,
+          "endPos": 71
+        },
+        {
+          "entity": "start-date",
+          "startPos": 40,
+          "endPos": 48
+        },
+        {
+          "entity": "end-date",
+          "startPos": 61,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "i need to take the rest of my remaining vacation days on june 01st and end on june 08th",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 40,
+          "endPos": 86
+        },
+        {
+          "entity": "start-date",
+          "startPos": 57,
+          "endPos": 65
+        },
+        {
+          "entity": "end-date",
+          "startPos": 78,
+          "endPos": 86
+        }
+      ]
+    },
+    {
+      "text": "i request my vacation from 01/01/2020 to 02/02/2020 since i have a medical permit for my pregnancy",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 13,
+          "endPos": 50
+        },
+        {
+          "entity": "date-range",
+          "startPos": 22,
+          "endPos": 50
+        }
+      ]
+    },
+    {
+      "text": "i want a leave for going on a vacation from 21st february to 28th february.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 30,
+          "endPos": 73
+        },
+        {
+          "entity": "date-range",
+          "startPos": 39,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "i want a paid time off vacation from february 18 to february 28 to go on my wedding trip.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 9,
+          "endPos": 21
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 62
+        },
+        {
+          "entity": "date-range",
+          "startPos": 32,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "i want a sick leave for 10 days from 1st march to visit doctor who lives in another state.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 9,
+          "endPos": 18
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 45
+        },
+        {
+          "entity": "days-number",
+          "startPos": 24,
+          "endPos": 25
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 24,
+          "endPos": 30
+        },
+        {
+          "entity": "start-date",
+          "startPos": 37,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "i want a vacation of 7 days starting on the first of july of the type sick because of sickness reasons.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 73
+        },
+        {
+          "entity": "days-number",
+          "startPos": 21,
+          "endPos": 21
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 21,
+          "endPos": 26
+        },
+        {
+          "entity": "start-date",
+          "startPos": 28,
+          "endPos": 56
+        },
+        {
+          "entity": "leave-type",
+          "startPos": 70,
+          "endPos": 73
+        }
+      ]
+    },
+    {
+      "text": "i want a vacation starting on june 10th and ending on june 15th",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 62
+        },
+        {
+          "entity": "start-date",
+          "startPos": 18,
+          "endPos": 38
+        },
+        {
+          "entity": "end-date",
+          "startPos": 44,
+          "endPos": 62
+        }
+      ]
+    },
+    {
+      "text": "i want my reglamentary vacation time from september 2 to 30 because i go on vacation to disney with my family",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 23,
+          "endPos": 58
+        },
+        {
+          "entity": "date-range",
+          "startPos": 37,
+          "endPos": 58
+        }
+      ]
+    },
+    {
+      "text": "i want paid time off from july 6 to august 10, cause i need to rest",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 7,
+          "endPos": 19
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 7,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "i want some pleasure vacations for being sick from february 02th to february 20th",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 21,
+          "endPos": 80
+        },
+        {
+          "entity": "leave-type",
+          "startPos": 41,
+          "endPos": 44
+        },
+        {
+          "entity": "date-range",
+          "startPos": 46,
+          "endPos": 80
+        }
+      ]
+    },
+    {
+      "text": "i want to ask for a 10-day vacation since october 13th because i am sick and have health related problems",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "days-number",
+          "startPos": 20,
+          "endPos": 21
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 20,
+          "endPos": 25
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 20,
+          "endPos": 71
+        },
+        {
+          "entity": "start-date",
+          "startPos": 36,
+          "endPos": 53
+        },
+        {
+          "entity": "leave-type",
+          "startPos": 68,
+          "endPos": 71
+        }
+      ]
+    },
+    {
+      "text": "i want to have a vacation, because the maternity leave, my doctor told me that i will be in labor at january 10th, so i need 7 days for that.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 17,
+          "endPos": 130
+        },
+        {
+          "entity": "start-date",
+          "startPos": 101,
+          "endPos": 112
+        },
+        {
+          "entity": "days-number",
+          "startPos": 125,
+          "endPos": 125
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 125,
+          "endPos": 130
+        }
+      ]
+    },
+    {
+      "text": "i want to request a vacation from 02/20/2020 to 02/28/2020",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 20,
+          "endPos": 57
+        },
+        {
+          "entity": "date-range",
+          "startPos": 29,
+          "endPos": 57
+        }
+      ]
+    },
+    {
+      "text": "i wish a pleasure holiday from december 15th to december 25th please",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 9,
+          "endPos": 60
+        },
+        {
+          "entity": "date-range",
+          "startPos": 26,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "i would need sick leave starting on january 7th till january 10th, because i have flu.",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "leave-type",
+          "startPos": 13,
+          "endPos": 22
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 13,
+          "endPos": 64
+        },
+        {
+          "entity": "date-range",
+          "startPos": 24,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "if you're going to denver i wouldn't be starting from here",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i'm going to paris for work the end of june so i want to book 10 days of vacation to follow that starting july 1",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "days-number",
+          "startPos": 62,
+          "endPos": 63
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 62,
+          "endPos": 68
+        },
+        {
+          "entity": "vacation-request",
+          "startPos": 62,
+          "endPos": 111
+        },
+        {
+          "entity": "start-date",
+          "startPos": 97,
+          "endPos": 111
+        }
+      ]
+    },
+    {
+      "text": "im requesting a vacation from feb 6th to feb 10th as my cousin is getting married",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 16,
+          "endPos": 48
+        },
+        {
+          "entity": "date-range",
+          "startPos": 25,
+          "endPos": 48
+        }
+      ]
+    },
+    {
+      "text": "i'm working away the next two weeks",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "it takes me the best part of a day to get to edinburgh",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "my birthday is on the second of march",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "my nearest airport is manchester",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "please make plans for traveling from december 20 until january 2",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 22,
+          "endPos": 63
+        },
+        {
+          "entity": "date-range",
+          "startPos": 32,
+          "endPos": 63
+        }
+      ]
+    },
+    {
+      "text": "requesting a vacation starting on 12 of january and ending 12 of february",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 13,
+          "endPos": 72
+        },
+        {
+          "entity": "start-date",
+          "startPos": 34,
+          "endPos": 46
+        },
+        {
+          "entity": "end-date",
+          "startPos": 59,
+          "endPos": 72
+        }
+      ]
+    },
+    {
+      "text": "requesting vacations from july 20 to august 15",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 11,
+          "endPos": 45
+        },
+        {
+          "entity": "date-range",
+          "startPos": 21,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "the easter holiday is early april this year",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "the swiss alps is one of my favorite places",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "usually i work from home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "yeah i'd like to book a vacation starting april 10th lasting for 10 days please",
+      "intent": "RequestVacation",
+      "entities": [
+        {
+          "entity": "vacation-request",
+          "startPos": 24,
+          "endPos": 71
+        },
+        {
+          "entity": "start-date",
+          "startPos": 33,
+          "endPos": 51
+        },
+        {
+          "entity": "days-number",
+          "startPos": 65,
+          "endPos": 66
+        },
+        {
+          "entity": "days-duration",
+          "startPos": 65,
+          "endPos": 71
+        }
+      ]
+    }
+  ],
+  "versionId": "0.1",
+  "name": "DEV-update-luis-sample",
+  "desc": "Sample app for the LUIS DevOps guidance",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "phraselists": [],
+  "regex_features": [],
+  "patterns": [],
+  "settings": []
+}
